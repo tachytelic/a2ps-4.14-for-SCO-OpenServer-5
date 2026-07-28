@@ -1,0 +1,16 @@
+# Local source workspace
+work/
+a2ps-4.14/
+a2ps-4.14.tar.gz
+
+# Build output
+install/
+pkgroot/
+
+# The prebuilt tarball ships via GitHub Releases, not via clone bloat
+prebuilt/*.tar.gz
+
+# Editor / OS
+*.swp
+*~
+.DS_Store
