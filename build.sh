@@ -35,11 +35,17 @@ PREFIX=/usr/local/a2ps-${VERSION}
 
 if [ -n "$GCC" ]; then
     CC="$GCC"
+elif [ -z "$CC" ]; then
+    if which gcc-3.4.6 >/dev/null 2>&1; then
+        CC=gcc-3.4.6
+    else
+        CC=gcc
+    fi
 fi
-CC="${CC:-gcc}"
 export CC
 
-PATH=/usr/gnu/bin:/usr/ccs/bin:/usr/bin:/bin
+# /usr/local/bin first: that's where gcc-3.4.6, bash and curl live.
+PATH=/usr/local/bin:/usr/gnu/bin:/usr/ccs/bin:/usr/bin:/bin
 export PATH
 
 # a2ps 4.14's configure is old but occasionally trips SCO's stock /bin/rm
@@ -61,7 +67,7 @@ fi
 
 if [ ! -d "$SRCDIR" ]; then
     echo "Unpacking $TARBALL..."
-    /usr/bin/gunzip -c "$TARBALL" | /usr/bin/tar xf -
+    gzip -dc "$TARBALL" | tar xf -
 fi
 
 cd "$SRCDIR"
