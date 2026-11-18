@@ -211,5 +211,5 @@ The build script in this repo is released under the MIT license — see
   — the natural first install on a fresh SCO box.
 - [GNU bash 3.2.57 for SCO](https://github.com/tachytelic/Bash-3.2.57-for-SCO-OpenServer-5)
   — needed for the `/dev/tcp` network-printing trick above.
-- [More SCO OpenServer 5 binaries](https://tachytelic.net/2017/07/sco-openserver-5-binaries/)
+- [More SCO OpenServer 5 binaries](https://scoexpert.com/guides/sco-openserver-5-binaries/)
   — the hub.
